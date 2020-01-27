@@ -11,6 +11,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -27,7 +28,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.InterfaceFieldAccess">
     <configuration name="Foreign" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jinm.java.base.accesscontrol.foreign.Foreign" />
       <module name="access-control" />
@@ -35,8 +36,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InterfaceFieldAccess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jinm.java.base.interfacedata.interfacefieldaccess.InterfaceFieldAccess" />
+      <module name="access-control" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InterfaceFieldAccess" />
         <item itemvalue="Application.Foreign" />
       </list>
     </recent_temporary>
@@ -46,22 +55,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="25" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1579789748794" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1579791788359">
+    <state x="488" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1580140131744">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1579791788359" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1579791788359">
+    <state x="488" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580140131744" />
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1580141745320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1579791788359" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1579791788358">
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580141745320" />
+    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1580141745320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1579791788358" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1579791788359">
+    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580141745320" />
+    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1580141745320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1579791788359" />
+    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580141745320" />
+    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1580141745320">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580141745320" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1580141745321">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580141745321" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1580141745321">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580141745321" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1580141745320">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580141745320" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1580141745321">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580141745321" />
     <state x="263" y="101" key="IDE.errors.dialog" timestamp="1579788277324">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
