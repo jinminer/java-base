@@ -40,9 +40,16 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Application.InterfaceFieldAccess">
+  <component name="RunManager" selected="Application.InheritInner">
     <configuration name="Foreign" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jinm.java.base.accesscontrol.foreign.Foreign" />
+      <module name="access-control" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InheritInner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jinm.java.base.innerclass.InheritInner" />
       <module name="access-control" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -57,6 +64,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InheritInner" />
         <item itemvalue="Application.InterfaceFieldAccess" />
         <item itemvalue="Application.Foreign" />
       </list>
