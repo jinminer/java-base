@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c967abf-2e2e-4230-b79e-68e35ec179db" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/access-control/target/classes/com/jinm/java/base/accesscontrol/PackagedClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/access-control/target/classes/com/jinm/java/base/accesscontrol/foreign/Foreign.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/access-control/target/classes/com/jinm/java/base/finaldata/FinalData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/access-control/target/classes/com/jinm/java/base/interfacedata/ImplementsData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/access-control/target/classes/com/jinm/java/base/interfacedata/InterfaceData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/access-control/target/classes/com/jinm/java/base/interfacedata/interfacefieldaccess/InterfaceFieldAccess.class" beforeDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,6 +127,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="101" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1579788277324" />
+    <state x="406" y="77" key="RollbackChangesDialog" timestamp="1580733949757">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="406" y="77" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1580733949757" />
     <state x="448" y="0" width="916" height="708" key="SettingsEditor" timestamp="1580285191160">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
