@@ -10,6 +10,9 @@ public class InheritInner extends WithInner.Inner{
     /**
      * without this construct：
      * No enclosing instance of type 'com.jinm.java.base.innerclass.WithInner' is in scope
+     * 由于内部类构建器必须同封装类对象的一个句柄联系到一起，所以从一个内部类继承的时候，情况会稍微变
+     * 得有些复杂。[这儿的问题是封装类的“秘密”句柄必须获得初始化]，而且在衍生类中不再有一个默认的对象
+     * 可以连接。
      * @param wi
      */
     InheritInner(WithInner wi){
