@@ -45,11 +45,33 @@
   * (2) 代表对象类型的Class 对象。可查询Class 对象，获取有用的运行期资料。
 
 * `instanceof`
+
+  * 静态调用
+
+  * object是否是class的实例
+
+    ```java
+    object instanceof class
+    ```
+
   * `RTTI` 在Java 中存在三种形式。关键字 `instanceof` 告诉我们对象是不是一个特定类型的实例（Instance 即“实例”）。
+
   * `instanceof` 有一个比较小的限制：只可将其与一个已命名的类型比较，不能同Class 对
     象作对比。
 
+  * `instanceof`在Java的编译状态和运行状态是有区别的：
 
+    * 在编译状态中，class可以是object对象的父类，自身类，子类。在这三种情况下Java编译时不会报错。
+
+    * 在运行状态中，class可以是object对象的父类，自身类，不能是子类。在前两种情况下result的结果为true，最后一种为false。
+
+*  `isInstance()` 
+
+  * Java 1.1 为Class 类添加了 `isInstance` 方法。利用它可以动态调用`instanceof` 运算符。而在Java 1.0
+    中，只能静态(`source instanceof class`)地调用它。
+  * `object.isInstance(class)`
+
+  
 
 
 
