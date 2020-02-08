@@ -17,8 +17,7 @@ class Hamster extends Rodent {}
 class Counter { int i; }
 
 public class PetCount {
-    static String[] typenames = {"Pet", "Dog", "Pug", "Cat", "Rodent", "Gerbil", "Hamster",
-    };
+    static String[] typenames = {"Pet", "Dog", "Pug", "Cat", "Rodent", "Gerbil", "Hamster",};
     public static void main(String[] args) {
         Vector pets = new Vector();
         try {
