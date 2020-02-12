@@ -1,6 +1,6 @@
 package com.jinm.java.base.accesscontrol.foreign;
 
-import com.jinm.java.base.accesscontrol.*;
+import com.jinm.java.base.accesscontrol.PackagedClass;
 
 public class Foreign {
 

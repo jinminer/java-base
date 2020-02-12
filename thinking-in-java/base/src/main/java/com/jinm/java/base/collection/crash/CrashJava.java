@@ -1,6 +1,5 @@
 package com.jinm.java.base.collection.crash;
 
-import java.util.Stack;
 import java.util.Vector;
 
 public class CrashJava {
