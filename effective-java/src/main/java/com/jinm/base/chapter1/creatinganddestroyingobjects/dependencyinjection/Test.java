@@ -20,6 +20,5 @@ public class Test {
         Test test = new Test(new Test1());
         Test test2 = new Test(new Test1());
 
-
     }
 }
