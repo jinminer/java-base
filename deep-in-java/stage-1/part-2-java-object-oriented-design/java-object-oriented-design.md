@@ -56,21 +56,119 @@
     * 反例：将`final`下沉到具体的不可变方法上。
       * 不可变方法较多，不适合下沉
       * 而且在不同的 jdk 版本， String 类会添加一些新的不可变方法，用`final`修饰类，使得类不可变，就不用每次新增加方法都添加`final`关键字
+* String 类并不是真正意义上的不可变类
+  * 从 java 1.5 开始**对象属性**可以通过反射修改（不是类属性）
+  * 所以 String 不是真正意义上的不可变类，因为从 java 1.5 以后，它的值可以通过反射被修改
 
 ### 具体类设计
 
 #### 常见场景
 
 * 功能组件
+  * HashMap
 * 接口/抽象类实现
+  * HashMap <- AbstractMap <- Map
 * 数据对象
+  * POJO
 * 工具辅助
+  * *Utils
+  * ViewHelper
+  * *Helper
+
+#### 命名模式
+
+* 前缀：”Default“、”Generic“、”Common“、”Basic“
+* 后缀：”Impl“
+
+### 抽象类设计
+
+#### 常见场景
+
+* 接口通用实现（模板模式）
+  * AbstractMap
+  * AbstractSet
+  * AbstractList
+* 状态/行为继承
+* 工具类
+
+#### 常见模式
+
+* 抽象程度介于类与接口之间（Java 8+ 可完全由接口代替）
+* 以”Abstract“或”Base“类名前缀
+  * java.util.AbstractCollection
+  * javax.sql.rowset.BaseRowSet
+
+### 接口设计
+
+#### 常见场景
+
+* 上下游系统（组件）通讯契约
+  * API
+  * RPC
+* 常量定义
+* 标记接口
+  * `Serializable`
+  * `Cloneable`
+  * `AutoCloseable`
+  * `EventListener` 
+* 常见模式
+  * 无状态（Stateless）
+  * 完全抽象（ < Java 8）
+  * 局部抽象（ Java 8+）
+  * 单一抽象（ Java 8 函数式接口）
+
+### 内置类设计
+
+#### 常见场景
+
+* 临时数据存储类：java.lang.ThreadLocal.ThreadLocalMap
+* 特殊用途的 API 实现：java.util.Collections.UnmodifiableCollection
+* Builder 模式（接口）：java.util.Stream.Builder
+
+
+
+## Java 枚举设计
+
+### 内容
+
+* ”枚举类“
+* 基本特性
+* 成员设计
+* 构造器设计
+* 方法设计
+
+### 枚举类
+
+#### 场景
+
+* Java 枚举(enum)引入之前(Java 5之前)的模拟枚举实现类
+
+#### 模式
+
+* 成员用常量表示，并且类型为当前类型
+* 常用关键字 final 修饰类
+* 非 public 构造器
+
+#### 基本特性
+
+* 类结构（强类型）
+* 继承 java.lang.Enum
+* 不可显式的继承和被继承
+
+#### 结论
+
+* 根据枚举类编译后的字节码文件，得出如下结论：
+  * 枚举(enum)实际是 final class
+  * 枚举(enum)成员修饰符为 public static final
+  * `values()` 是 Java 编译器做的字节码提升
 
 
 
 
 
+## 问题要点
 
-
-
+* HashMap是否是线程安全的？
+  * 1.在只读情况下，线程安全
+  * 2.在读写操作共存时，会因索引构建不一致而出现线程不安全的情况
 
