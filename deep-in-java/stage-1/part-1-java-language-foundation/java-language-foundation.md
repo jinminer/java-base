@@ -84,6 +84,13 @@
           * 方法一：`JVM`参数控制栈深度（物理屏蔽）
           * 方法二：`logback` 日志框架控制堆栈输出深度（逻辑屏蔽）
 
+#### 知识点
+
+* 异常信息打印时使用 `java.lang.Throwable#printStackTrace()` 方法会降低程序性能
+  * `printStackTrace()` 方法会导致异常堆栈信息输出到标准错误输出流中
+  * 而标准错误输出流属于系统级别的公共资源，可能会因为其他程序线程抢占资源，而使当前输入流程序排队等待的情况，所以会降低程序的性能
+  * 可以调用其重载方法 `java.lang.Throwable#printStackTrace(java.io.PrintStream)` 指定输出流，以因为避免抢占资源，而出现的程序阻塞等待情况
+
 
 
 ### 泛型设计
@@ -92,6 +99,12 @@
   * 在运行时只读类信息，而不读类的泛型信息
   * 方法签名时，进行运行时擦写，类型化参数(泛型参数)等同于 Object
     * `List` 等同于 `List<String>`
+
+#### 知识点
+
+* 利用泛型进行程序设计时，如何区分 T 和 ? ，以及它们的使用场景
+  * T 有一种类型的概念，通常 T 可以用在类型和方法，而 ? 仅用于方法
+  * T 存在类型继承性，而 ? 不存在
 
 
 
@@ -160,7 +173,6 @@
     * 匿名内置代码实现啰嗦
   * 兼容接口升级
     * Java 8 中 接口中可以声明默认的 default 方法实现
-
 * 实现手段
   * `@FunctionalInterface` 接口
   * Lambda 语法
@@ -171,13 +183,86 @@
   * Lambda 调试困难
   * `Stream API` 操作能力有限
 
+### 默认方法
+
+* 使用场景
+  * 当接口升级时，添加了新的抽象方法，此时基于老接口的实现类必然会遇到编译问题。
+  * 默认方法的出现能够解决以上问题，同时也能为实现类提供默认或样板实现，减少实现类的负担，无需再使用 Adapter 实现。
+* 提示
+  * 默认方法不列入 `@FunctionalInterface` 方法计算
+
+### 函数式接口
+
+* 基本特性
+  * 所有的函数式接口都引用一段执行代码
+  * 函数式接口没有固定的类型
+  * 只有固定模式 
+    * `SCFP(Supplier + Consumer + Function + Predicate) + Action` 
+  * 利用方法引用来实现模式匹配/关联
+    * 即所谓固定模式是通过方法引用来实现的
+
+
+
 ## Java 模块化基础
 
+### Java 9 模块化
+
+* 动机
+  * 强封装的实施与精确的模块依赖声明使得大型应用和框架更好的维护
+  * 安全提升
+  * 增快应用模块中类型检测的速度，提升应用性能
+  * 瘦身 `JDK` 已经 `SE` 的体积，有利于在小型计算机设备使用和云端部署
+
+* 收益
+  * 提升平台伸缩性
+  * 提升平台完整性
+  * 提升性能
+
+### 定义模块
+
+* 模块声明
+
+  > A module's self-description is expressed in its module declaration, a new construct of the Java programing language
+
+* 模块依赖
+
+  > One or more requires clauses can be added to declare that the module depends, by name, upon some other modules, at both compile time and run time.
+
+* 模块导出
+
+  >exports clauses can be added to declare that the module makes all, and only, the public types in specific packages available for use by other modules.
+
+### 模块化
+
+* 强封装性
+  * 基本特性
+    * 并非所有的 `public` Class 都可以被运用，需要 `exports` 来配合
+    * `exports` 所配置的 `package` 下必须要有 Class
+  * 负面问题
+    * 对开发人员的要求较高（对 Class 透明化）
+      * 必须了解相关 `module-info.java` 的语义
+      * 需要了解某些类的依赖
+      * 需要了解某些类的职责
+  * 思考
+    * 收益不大，代价不小
+    * 对开发团队要求较高
+    * 区别
+      * Java 9 之前：采用 jar 文件管理
+      * Java 9 模块化之后，变成了 `module-info.java` 管理
+      * 还需要考虑与 `Maven` 等依赖管理组件如何配合
 
 
 
+### 模块结构
 
-
+* 模块描述文件
+  *  `module-info.java` 
+  * 模块名称类似于 Maven 中的 `artifactId` 
+  * 区别
+    * Maven 中是默认传递依赖
+    * Java 9 模块化中是非传递依赖（相当于 Maven 中的 `optional = true`）
+* 平台模块
+* 模块 artifacts
 
 
 

@@ -1,5 +1,6 @@
 package com.jinm.deepinjava.language.foundation;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,10 +11,19 @@ public class GenericTypeDemo {
      * @param <S> 来源类型
      * @param <T> 转换类型
      */
-    private interface Converter<S, T>{
+    private interface Converter<S, T extends Serializable>{
 
         //类型擦写：在运行时并不知道具体的类型
         T convert(S source);
+    }
+
+    /**
+     * T 存在类型继承性
+     * 泛型类型参数 T 被继承，同时子接口少了一个泛型类型 S
+     * @param <T>
+     */
+    private interface StringConverter<T extends Serializable> extends Converter<String,T>{
+
     }
 
     public static void main(String[] args) {
@@ -21,12 +31,14 @@ public class GenericTypeDemo {
         //编译后，用 javap -v 指令查看 .class 文件，发现泛型化参数还在
         new Converter<String, Integer>(){
 
+            @Override
             public Integer convert(String source) {
                 return null;
             }
         };
 
         new Converter<Integer, String>() {
+            @Override
             public String convert(Integer source) {
                 return null;
             }
