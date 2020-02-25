@@ -10,5 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>part-1-java-language-foundation</artifactId>
+    <name>Java 语言基础</name>
 
 </project>

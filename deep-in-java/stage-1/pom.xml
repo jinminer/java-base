@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>part-1-java-language-foundation</module>
+        <module>part-2-java-object-oriented-design</module>
     </modules>
 
 

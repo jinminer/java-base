@@ -2,17 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>stage-1</artifactId>
+        <groupId>com.jinm</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.jinm</groupId>
-    <artifactId>deep-in-java</artifactId>
-    <packaging>pom</packaging>
-    <name>深入理解Java</name>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>stage-1</module>
-        <module>stage-0</module>
-    </modules>
+    <artifactId>part-2-java-object-oriented-design</artifactId>
+    <name>Java 面向对象设计</name>
 
 
 </project>

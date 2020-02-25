@@ -31,14 +31,12 @@ public class GenericTypeDemo {
         //编译后，用 javap -v 指令查看 .class 文件，发现泛型化参数还在
         new Converter<String, Integer>(){
 
-            @Override
             public Integer convert(String source) {
                 return null;
             }
         };
 
         new Converter<Integer, String>() {
-            @Override
             public String convert(Integer source) {
                 return null;
             }
