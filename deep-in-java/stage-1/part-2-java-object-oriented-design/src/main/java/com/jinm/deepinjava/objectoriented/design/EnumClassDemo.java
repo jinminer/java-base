@@ -25,8 +25,6 @@ public class EnumClassDemo {
         println(CountingEnum.ONE);
         println(CountingEnum.FIVE);
 
-
-
         //
         printEnumMeta(CountingEnum.FIVE);
         printEnumMeta(CountingEnum.THREE);
@@ -79,15 +77,44 @@ public class EnumClassDemo {
 enum CountingEnum{
 
     //
-    ONE(1),
-    TWO(2),
-    THREE(3),
-    FOUR(4),
-    FIVE(5);
+    ONE(1){
+        @Override
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    },
+    TWO(2){
+        @Override
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    },
+    THREE(3){
+        @Override
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    },
+    FOUR(4){
+        @Override
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    },
+    FIVE(5){
+        @Override
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    };
 
     private int value;
     CountingEnum(int value){
         this.value = value;
+    }
+
+    public int getValue() {
+        return value;
     }
 
     @Override
@@ -96,6 +123,10 @@ enum CountingEnum{
                 "value=" + value +
                 '}';
     }
+
+    //枚举中可以声明 抽象方法，打破 final 类不能声明抽象方法的规则
+    //观察枚举的字节码文件发现，枚举类是一种特殊的 final class，它可以拥有抽象方法
+    public abstract String valueAsString();
 
 }
 
@@ -107,13 +138,33 @@ enum CountingEnum{
  *      用常量定义本类，并用数据状态（字段）表示本类
  *
  */
-final class Counting{
+abstract class Counting extends Data{
 
-    public static final Counting ONE = new Counting(1);
-    public static final Counting TWO = new Counting(2);
-    public static final Counting THREE = new Counting(3);
-    public static final Counting FOUR = new Counting(4);
-    public static final Counting FIVE = new Counting(5);
+    public static final Counting ONE = new Counting(1){
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    };
+    public static final Counting TWO = new Counting(2){
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    };
+    public static final Counting THREE = new Counting(3){
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    };
+    public static final Counting FOUR = new Counting(4){
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    };
+    public static final Counting FIVE = new Counting(5){
+        public String valueAsString() {
+            return String.valueOf(this.getValue());
+        }
+    };
 
     private int value;
     private Counting(int value){
@@ -125,6 +176,10 @@ final class Counting{
         return "Counting{" +
                 "value=" + value +
                 '}';
+    }
+
+    public int getValue() {
+        return value;
     }
 
     public static Counting[] values(){
