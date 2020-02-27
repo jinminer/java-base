@@ -1,4 +1,4 @@
-package com.jinm.deepinjava.functionaldesign.functional;
+package com.jinm.deepinjava.functionaldesign.scfp;
 
 public class ActionDemo {
 

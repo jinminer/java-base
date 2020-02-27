@@ -308,7 +308,12 @@ public interface Predicate<T> {
   * Stream#sorted()
   * Stream#sorted(Comparator)
 
+### 类型
 
+* 串行 Stream（默认类型）
+* 并行 Stream
+  * 转换为并行 Stream：`Stream#parallel()`
+  * 是否为并行 Stream：`Stream#isParallel()`
 
 
 

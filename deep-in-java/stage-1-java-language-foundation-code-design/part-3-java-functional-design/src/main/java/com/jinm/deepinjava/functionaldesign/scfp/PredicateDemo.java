@@ -1,4 +1,4 @@
-package com.jinm.deepinjava.functionaldesign.functional;
+package com.jinm.deepinjava.functionaldesign.scfp;
 
 import java.io.File;
 import java.util.function.Predicate;
