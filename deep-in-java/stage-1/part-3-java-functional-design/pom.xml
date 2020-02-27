@@ -3,19 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>deep-in-java</artifactId>
+        <artifactId>stage-1</artifactId>
         <groupId>com.jinm</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>stage-1</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>part-1-java-language-foundation</module>
-        <module>part-2-java-object-oriented-design</module>
-        <module>part-3-java-functional-design</module>
-    </modules>
+    <artifactId>part-3-java-functional-design</artifactId>
 
 
 </project>
