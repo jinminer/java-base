@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>part-1-java-language-foundation</artifactId>
-    <name>Java 语言基础</name>
+    <artifactId>part-2-java-object-oriented-design</artifactId>
+    <name>第一阶段 ：：第二部分 ：Java 面向对象设计</name>
 
 </project>

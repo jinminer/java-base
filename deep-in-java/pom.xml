@@ -10,8 +10,8 @@
     <name>深入理解 Java </name>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>stage-1</module>
-        <module>stage-0</module>
+        <module>stage-1-java-language-foundation-code-design</module>
+        <module>stage-2-java-collections-framework</module>
     </modules>
 
     <build>
