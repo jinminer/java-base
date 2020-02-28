@@ -10,7 +10,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>stage-2-java-collections-framework</artifactId>
+    <packaging>pom</packaging>
     <name>第二阶段 ：Java 集合框架</name>
+    <modules>
+        <module>part-1-java-modularization-design</module>
+        <module>part-2-collection-framework-foundational-usage</module>
+        <module>part-3-collection-framework-advanced-usage</module>
+        <module>part-4-collection -framework-algorithm-usage</module>
+    </modules>
 
 
 </project>
