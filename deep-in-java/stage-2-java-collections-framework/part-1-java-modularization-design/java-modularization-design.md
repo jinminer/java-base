@@ -74,15 +74,72 @@ module java.sql{
 }
 ```
 
+## Java 模块化核心概念
+
+### 模块路径（Module Path）
+
+模块路径可能是单个 artifact， 或者是多个 artifacts 的目录，存在于宿主机器上。
+
+* 类路径（Class Path）的脆弱性
+  * 通过 artifacts 的 Class Path 区分类型
+  * 无法区分 artifacts
+  * 无法提前通知 artifacts 缺少
+  * 允许不同的 artifacts 定义在相同的 packages 定义类型
+
+### 模块路径的差异性
+
+* 定位整个模块而非类型
+* 无论是运行时，还是编译时，在同一目录下不允许出现同名模块
+
+### 模块解析（Resolution）
+
+* 假设当前模块 com.foo.app 如下定义：
+
+```java
+module com.foo.app{
+    requires com.foo.bar;
+    requires java.sql;
+}
+```
+
+* com.foo.app 依赖于 java.sql 模块，而该模块又存在 java.logging 和 java.xml 依赖：
+
+```java
+module java.sql{
+    requires java.logging;
+    requires java.xml;
+    exports java.sql;
+    exports javax.sql;
+    exports javax.transaction.xa;
+}
+```
+
+* Java 模块看化系统将会解析模块 com.foo.app 完整的依赖树：
+
+![1.0-module-dependency-tree](https://raw.githubusercontent.com/jinminer/docs/master/java-base/deep-in-java/stage-2-java-collections-framework/part-1-java-modularization-design/1.0-module-dependency-tree.png)
 
 
 
+### 可读性（Readability）
+
+* 解析
+
+  * 如上图所示，模块 com.foo.app 依赖模块 com.foo.bar 和 java.sql，说明 java.sql 对 com.foo.app 是读的。
+  * 同时，java.sql 依赖 java.xml 和 java.logging 模块，然而这并不意味着 java.xml 或 java.logging对 com.foo.app 可读。
+  * 简而言之，可读性无法在跨层模块之间生效。
+
+* 结论
+
+  * 这种在模块中定义的可读性关系是可靠配置的基础，这种配置不但更加可靠，同时也提升了模块读取速度。
+
+    ![readable](https://raw.githubusercontent.com/jinminer/docs/master/java-base/deep-in-java/stage-2-java-collections-framework/part-1-java-modularization-design/1.1-readable.png)
 
 
 
+### 访问性（accessible）
 
-
-
+* 访问性依赖于强封装性
+* 强封装性 = 可读性关系 + 模块 exports 声明
 
 
 
