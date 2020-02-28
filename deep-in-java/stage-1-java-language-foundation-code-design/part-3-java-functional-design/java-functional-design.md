@@ -21,6 +21,7 @@
   > * 同时，`@FunctionalInterface` 不能标注在注解、类以及枚举上。如果违背以上规则，那么接口不能视为函数式接口，当标注`@FunctionalInterface` 后，会引起编译错误。
 
 * 注意
+  
   * 不过，如果任一接口满足以上函数式接口卡的要求，无论接口声明中是否标注 `@FunctionalInterface` ，均能被编译器视作函数式接口
 
 ### 函数式接口类型
@@ -315,7 +316,13 @@ public interface Predicate<T> {
   * 转换为并行 Stream：`Stream#parallel()`
   * 是否为并行 Stream：`Stream#isParallel()`
 
+### 高级操作
 
+* `Collection` 操作
+* 分组操作
+* 聚合操作
+* `flatMap` 操作
+* reduce 操作
 
 
 
