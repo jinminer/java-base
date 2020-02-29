@@ -14,9 +14,9 @@
     <name>第二阶段 ：Java 集合框架</name>
     <modules>
         <module>part-1-java-modularization-design</module>
-        <module>part-2-collection-framework-foundational-usage</module>
-        <module>part-3-collection-framework-advanced-usage</module>
-        <module>part-4-collection -framework-algorithm-usage</module>
+        <module>part-2-collections-framework-foundational-usage</module>
+        <module>part-3-collections-framework-advanced-usage</module>
+        <module>part-4-collections-framework-algorithm-usage</module>
     </modules>
 
 

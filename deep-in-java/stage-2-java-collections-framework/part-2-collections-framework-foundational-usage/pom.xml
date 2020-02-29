@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>part-4-collection -framework-algorithm-usage</artifactId>
-    <name>第二阶段 ：：第四部分：集合框架算法运用</name>
+    <artifactId>part-2-collections-framework-foundational-usage</artifactId>
+    <name>第二阶段 ：：第二部分：集合框架基础运用</name>
 
 </project>
