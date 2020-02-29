@@ -143,15 +143,44 @@ module java.sql{
 
 
 
+## Java 模块化迁移
+
+### 迁移分析
+
+* 需要明确应用实现依赖的 JDK 模块
+* 需要明确二方或三方 jar 所依赖的 JDK 模块
+* 需要微服务化应用
+
+### 模块分类
+
+#### 命名模块（Named modules）
+
+* 所有正常的 Java 模块，packages 暴露受限于 exports
+* 凡是定义 module-info.java(module-info.class)属于命名模块（Java 9 + 模块化 artifact）
+
+#### 非命名模块（Unnamed module）
+
+* 类型加载于 ClassPath，而非具体模块，如一六 jar 文件，暴露所有的 packages。
+* Java 9 之前的 artifact 属于非命名模块（迁移老类库）
+
+#### 自动模块（automatic module）
+
+* 假设我们需要使用 Spring ListenableFuture API，它来自于 org.springframework:springcore，由于该 jar 文件属于非命名模块，并且其 artifactId 为 spring-core，该 ID 命名的方式对于模块名称是非法的。
+* 我们能够在模块路径下能够使用“自动模块”代替 spring-core*.jar，即使用 spring.core 模块。
+* 规则
+  * 如果在 `MANIFEST.MF` 定义了 `Automatic-Module-Name` 属性，那么采用该属性值做模块名称
+  * 否则，使用 jar 文件的名称（如果存在“-”的话，将其替换为“.”）
+* 否则，使用 jar 
 
 
 
+## Java 模块化反射
 
+### 获取模块
 
-
-
-
-
+* 获取模块 - Class#getModule()
+* 模块接口 - Module
+* 模块描述文件接口 - ModuleDescriptor
 
 
 
