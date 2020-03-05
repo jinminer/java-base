@@ -90,33 +90,63 @@ A **comparison sort** is a type of [sorting algorithm](https://en.wikipedia.org/
 
 #### 冒泡排序（Bubble Sort）
 
-* 时间复杂度
+#### 插入排序（Insertion Sort）
+
+#### 快速排序（Quick Sort）
+
+* 步骤
+  * 获取 pivot（轴）
+  * 分区（Partitioning）
+  * 递归执行
+
+#### 合并排序（Merge Sort）
+
+* 步骤
+  * 分块（Divide）
+  * 递归合并（Conquer）
 
 
 
+## Java 集合框架排序算法实现
+
+### 内建实现
+
+* 冒泡排序（Bubble Sort）：无
+* 插入排序（Insertion Sort）：java.util.Arrays#mergeSort（当排序集合数量小于 7 时）
+* 快速排序（Quick Sort）：java.util.DualPivotQuickSort#sort（since 1.7）
+* 合并排序（Merge Sort）：java.util.Arrays#mergeSort（1.7 后需要激活）
+* Tim 排序（Tim Sort）：java.util.TimSort（Since 1.7）
 
 
 
+## 二分搜索算法
 
+### 二分搜索（Binary Search）
 
+Also known as **half-interval search**,[[1\]](https://en.wikipedia.org/wiki/Binary_search_algorithm#cite_note-Williams1976-1) **logarithmic search**,[[2\]](https://en.wikipedia.org/wiki/Binary_search_algorithm#cite_note-FOOTNOTEKnuth1998§6.2.1_("Searching_an_ordered_table"),_subsection_"Binary_search"-2) or **binary chop**,[[3\]](https://en.wikipedia.org/wiki/Binary_search_algorithm#cite_note-FOOTNOTEButterfieldNgondi201646-3) is a [search algorithm](https://en.wikipedia.org/wiki/Search_algorithm) that finds the position of a target value within a [sorted array](https://en.wikipedia.org/wiki/Sorted_array).[[4\]](https://en.wikipedia.org/wiki/Binary_search_algorithm#cite_note-FOOTNOTECormenLeisersonRivestStein200939-4)[[5\]](https://en.wikipedia.org/wiki/Binary_search_algorithm#cite_note-5) Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array.
 
+### 步骤
 
+1. 假设 A 表示数组，V 表示搜索的数据，设置 L（低位）=0，H（高位）= 数组长度 - 1
+2. 如果 L > H 的话，搜索结果
+3. 设置 M（中位）= L + H / 2
+4. 如果 A[M] < V，设置 L = M + 1，重新执行步骤二
+5. 如果 A[M] > V，设置 L = M - 1，重新执行步骤二
+6. 当 A[M] = V 时，搜索结束，返回 M
 
+### 类比算法
 
+* Hash 算法
+* Trees 算法
+* 线性搜索
 
+### Java 二分搜索算法实现
 
+内建实现
 
-
-
-
-
-
-
-
-
-
-
-
+* java.util.Arrays#binarySearch
+* java.util.Collections#binarySearch
+* java.util.TreeMap
 
 
 
