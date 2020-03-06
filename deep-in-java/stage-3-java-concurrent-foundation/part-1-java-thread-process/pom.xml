@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>part-1-java-thread-progress</artifactId>
+    <artifactId>part-1-java-thread-process</artifactId>
     <name>第三阶段 ：：第一部分：Java 线程与进程</name>
 
 

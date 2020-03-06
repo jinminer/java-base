@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <name>第三阶段 ：Java 并发基础</name>
     <modules>
-        <module>part-1-java-thread-progress</module>
+        <module>part-1-java-thread-process</module>
         <module>part-2-java-concurrent-programing-foundation</module>
     </modules>
 
