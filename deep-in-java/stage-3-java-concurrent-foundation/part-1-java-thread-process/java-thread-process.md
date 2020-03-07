@@ -83,13 +83,35 @@
   * TIMED_WAITTING：线程处于规定时间内的等待状态
   * TERMINATED：线程执行结束
 
+### 使用场景
+
+#### 线程堆栈
+
+* 工具  - jstack
+* JMX - java.lang.management.ThreadMXBean#dumpAllThreads(boolean,boolean)
+* API - java.lang.Thread#dumpStack()
 
 
 
+## Java 线程生命周期
 
+### 生命周期方法
 
+* 启动 - java.lang.Thread#start()
+* ~~停止 - java.lang.Thread#stop()~~
+* ~~暂停 - java.lang.Thread#suspend()~~
+* ~~恢复 - java.lang.Thread#resume()~~
+* “中止” - java.lang.Thread#interrupt()、java.lang.Thread#isInterrupted()
 
+**为什么弃用 Thread.stop；Thread.suspend 和 Thread.resume 方法？**
 
+* 参考：https://docs.oracle.com/javase/8/docs/technotes/guides/concurrency/threadPrimitiveDeprecation.html
+
+  * ### Why is `Thread.stop` deprecated?
+
+  * ### Why are `Thread.suspend` and `Thread.resume` deprecated?
+
+**如何中止一个线程？**
 
 
 
