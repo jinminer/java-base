@@ -14,6 +14,7 @@
         <module>stage-2-java-collections-framework</module>
         <module>stage-3-java-concurrent-foundation</module>
         <module>stage-3-java-concurrent-foundation/part-3-concurrent-framework-foundational-usage</module>
+        <module>stage-3-java-concurrent-foundation/part-4-concurrent-framework-advanced-usage</module>
     </modules>
 
     <build>

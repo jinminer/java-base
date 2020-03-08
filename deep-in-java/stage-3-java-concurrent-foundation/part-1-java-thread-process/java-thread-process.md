@@ -113,11 +113,42 @@
 
 **如何中止一个线程？**
 
+**怎样理解线程“中止”方法**
+
+* Thread#interrupt()
+* Thread#isInterrupted()
 
 
 
+## Java 线程通讯
 
 
+
+## Java 进程管理
+
+### 管理当前 JVM 进程
+
+* 获取当前 JVM 进程 ID
+* 获取当前 JVM 进程启动时间
+* 获取当前 JVM 进程线程数量
+* 获取当前 JVM 内存使用情况
+* 退出当前 JVM 线程
+
+### 管理子进程
+
+* 启动子进程
+* 进程 API
+* 主子进程 I/O 交互
+* 阻塞进程
+* 推出进程
+
+### Java 9 进程 API 提升
+
+* 基础模块：java.base
+* 核心 API：java.lang.ProcessHandle
+* 进程管理
+  * 当前进程
+  * 子进程
 
 
 
