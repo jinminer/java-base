@@ -80,27 +80,50 @@ A **lock** or **mutex** (from **mutual exclusion**) is a synchronization mechani
 
 
 
+## Java 同步原语
+
+### 同步原语 - synchronized
+
+* 锁定对象：对象（Object）和类（Class）
+* 修饰范围：方法（Method）、代码块（Block）
+* 特点：重进入（Reentrant）
+
+* 方法 flags：ACC_SYNCHRONIZED
+* 字节码：monitorenter 和 monitorexit
+* 锁实现：Thin Lock、Inflated、HeavyWeight
+
+进阶阅读：https://wiki.openjdk.java.net/display/HotSpot/Synchronization
+
+![monitor-synchronized](https://raw.githubusercontent.com/jinminer/docs/master/java-base/deep-in-java/stage-3-java-concurrent-foundation/part-2-java-concurrent-programing-foundation/2.0-monitor-synchronized.png)
+
+![reentrantlock](https://raw.githubusercontent.com/jinminer/docs/master/java-base/deep-in-java/stage-3-java-concurrent-foundation/part-2-java-concurrent-programing-foundation/2.0-reentrantlock.png)
+
+### 同步原语 - volatile
+
+* 底层：内存屏障（Memory Barriers）
+* 语义：可见性
+
+### 同步原语 - CAS（Compare And Swap）
+
+* 底层：原子信号指令（Atomic Semaphore Instructions）
+* 语义：原子性
 
 
 
+## Java 线程 Liveness
+
+### 场景
+
+* Java 线程死锁（Dead Lock）
+* Java 线程饥饿（Starvation）
 
 
 
+## Java 并发经典模型
 
+### 实战演示
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+* Java 生产者和消费者模型
 
 
 
