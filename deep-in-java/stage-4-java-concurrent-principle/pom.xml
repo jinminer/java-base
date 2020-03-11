@@ -9,14 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>stage-3-java-concurrent-foundation</artifactId>
-    <packaging>pom</packaging>
-    <name>第三阶段 ：Java 并发基础</name>
+    <artifactId>stage-4-java-concurrent-principle</artifactId>
+    <name>第四阶段 ：Java 并发原理</name>
     <modules>
-        <module>part-1-java-thread-process</module>
-        <module>part-2-java-concurrent-programing-foundation</module>
-        <module>part-3-concurrent-framework-foundational-usage</module>
-        <module>part-4-concurrent-framework-advanced-usage</module>
+        <module>part-1-posix-thread</module>
+        <module>part-2-java-memory-model</module>
+        <module>part-3-java-concurrent-aqs-principle</module>
+        <module>part-4-jvm-concurrent-implementation</module>
     </modules>
 
 
