@@ -9,7 +9,7 @@ public class ClassLoaderAndClassPathDemo {
     public static void main(String[] args) {
         // 通常，在 JVM 进程中添加 -verbose:class 参数来显示加载的 Class
         // 所在的位置（source），如：
-        // [0.397s][info][class,load] com.segmentfault.deep.in.java.ClassLoaderAndClassPathDemo source: file:/E:/workspace/github/mercyblitz/segmentfault-lessons/%e3%80%8c%e4%b8%80%e5%85%a5%20Java%20%e6%b7%b1%e4%bc%bc%e6%b5%b7%20%e3%80%8d/%e4%bb%a3%e7%a0%81/segmentfault/deep-in-java/stage-5/stage-5-lesson-1/target/classes/
+        // [Loaded com.jinm.deepinjava.classhierarchy.ClassLoaderAndClassPathDemo from file:/D:/workspace/projects/advance/learning/java-base/deep-in-java/stage-5-java-storage-management/part-1-java-class-hierarchy/target/classes/]
         // Bootstrap ClassLoader 加载的 Class 将会抛出 java.lang.NullPointerException
 //        getClassLocation(Object.class);
 //        getClassLocation(int.class);

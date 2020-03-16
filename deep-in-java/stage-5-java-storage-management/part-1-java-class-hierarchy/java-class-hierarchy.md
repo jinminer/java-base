@@ -104,28 +104,22 @@ header 文件是`.hpp` 存储，source 文件是对应的 `.cpp` 文件。
 #### allocation.hpp 以及 allocation.cpp 文件
 
 - ResourceObj
-
-For objects allocated in the resource area (see resourceArea.hpp).
+  - For objects allocated in the resource area (see resourceArea.hpp).
 
 - CHeapObj
-
-For objects allocated in the C-heap (managed by: free & malloc).
+  - For objects allocated in the C-heap (managed by: free & malloc).
 
 - StackObj
-
-For objects allocated on the stack.
+  - For objects allocated on the stack.
 
 - ValueObj
-
-For embedded objects.
+  - For embedded objects.
 
 - AllStatic
-
-For classes used as name spaces.
+  - For classes used as name spaces.
 
 - MetaspaceObj
-
-For classes in Metaspace (class data)
+  - For classes in Metaspace (class data)
 
 
 
