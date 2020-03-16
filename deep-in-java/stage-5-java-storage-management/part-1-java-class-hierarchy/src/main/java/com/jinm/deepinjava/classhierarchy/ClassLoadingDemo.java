@@ -18,16 +18,16 @@ public class ClassLoadingDemo {
         // 加载某个 Class 对象
         // User user = ... -> load class
 
-        // 当前工程相对路径：stage-5/stage-5-lesson-1
-        // 当前工程绝对路径：${user.dir}/stage-5/stage-5-lesson-1
-        // 当前工程ClassPath ：${user.dir}/stage-5/stage-5-lesson-1/target/classes
-        // User 类全名：com.segmentfault.deep.in.java.User
-        // User.class 文件路径：${ClassPath}/com/segmentfault/deep/in/java/User.class
+        // 当前工程相对路径：stage-5-java-storage-management/part-1-java-class-hierarchy
+        // 当前工程绝对路径：${user.dir}/stage-5-java-storage-management/part-1-java-class-hierarchy
+        // 当前工程ClassPath ：${user.dir}/stage-5-java-storage-management/part-1-java-class-hierarchy/target/classes
+        // User 类全名：com.jinm.deepinjava.classhierarchy.User
+        // User.class 文件路径：${ClassPath}/com/jinm/deepinjava/classhierarchy/User.class
 
-        String className = "com.segmentfault.deep.in.java.User";
-        // com/segmentfault/deep/in/java/User.class
+        String className = "com.jinm.deepinjava.classhierarchy.User";
+        // /com/jinm/deepinjava/classhierarchy/User.class
         String classFileName = className.replace('.', '/').concat(".class");
-        String classPath = System.getProperty("user.dir") + "/stage-5/stage-5-lesson-1/target/classes";
+        String classPath = System.getProperty("user.dir") + "/stage-5-java-storage-management/part-1-java-class-hierarchy/target/classes";
         // User.class 类文件的绝对路径
         File classFile = new File(classPath, classFileName);
 
