@@ -22,6 +22,8 @@ public class ClassObjectDemo {
 
         isPrimitive(objectClass);
         isPrimitive(intClass);
+        System.out.println(intClass.getClassLoader());
+        System.out.println(objectClass.getClassLoader());
 
         // Object.class 和 int.class 均被 Bootstrap ClassLoader
         // Bootstrap ClassLoader 在 Java 9 之前，就是 rt.jar

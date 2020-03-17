@@ -51,7 +51,7 @@ public class ClassLoadingDemo {
         // 重新替换掉线程上下文 ClassLoader
         // myClassLoader -> Thread.currentThread().getContextClassLoader()
         Thread.currentThread().setContextClassLoader(myClassLoader);
-        // 老的线程上下文 ClassLoader 是 MyClassLoader 的 parent，由于双亲委派，及时是 MyClassLoader 重新调用
+        // 老的线程上下文 ClassLoader 是 MyClassLoader 的 parent，由于双亲委派，即使是 MyClassLoader 重新调用
         // loadClass(String) 方法，也不会重新加载
         Class<?> userClassFromMyClassLoader = classLoader.loadClass(className);
         System.out.println("userClass == userClassFromMyClassLoader ? " +
