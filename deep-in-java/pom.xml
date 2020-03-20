@@ -15,6 +15,9 @@
         <module>stage-3-java-concurrent-foundation</module>
         <module>stage-4-java-concurrent-principle</module>
         <module>stage-5-java-storage-management</module>
+        <module>stage-6-java-garbage-collection-tuning</module>
+        <module>stage-6-java-garbage-collection-tuning/part-1-traditional-garbage-collector-tuning</module>
+        <module>stage-6-java-garbage-collection-tuning/part-2-cenozoic-garbage-collector-tuning</module>
     </modules>
 
     <build>
