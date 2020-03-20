@@ -14,7 +14,7 @@ public class ConsumerDemo {
 
         // Fluent API
         // consumer2 -> consumer -> consumer
-        consumer2.andThen(consumer).andThen(consumer).accept("Hello2,小马哥");
+        consumer2.andThen(consumer).andThen(consumer).accept("Hello2,月白");
 
     }
 

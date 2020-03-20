@@ -8,7 +8,7 @@ public class ActionDemo {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                System.out.println("小马哥");
+                System.out.println("月白");
             }
         };
 

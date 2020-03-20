@@ -120,7 +120,7 @@ public class SynchronizedWithRelationDemo {
          *  引用：普通对象、数组、集合（Collection、Map）
          *  对于原生类型，复制
          */
-        Person person = new Person("小马哥", 33, tags);
+        Person person = new Person("月白", 33, tags);
 
         /**
          * 修改第三个元素 "C" -> "E"
