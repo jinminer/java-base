@@ -14,6 +14,7 @@ public class JavaHeapSpaceOOMDemo {
         // -Xmx10m -> 10 * 1024 * 1024
         // int = 32bit = 4 Byte
         // size(2MB) * 4 = 8MB
+        // [OK] -Xmx16m
         int[] array = new int[size];
 
         /*
