@@ -111,6 +111,26 @@ G1 垃圾收集器由两个周期轮替，即 Young-only 和 Space-reclamation�
   * 设置合理的 Buffer 大小
   * 替换文件系统的日志存储方式
 
+### 引用对象处理时间过长
+
+* 引用处理和入队所消耗的时间将显示在 GC 日志信息中
+* 在引用处理阶段，G1 将更新引用对象（Reference）中被引用对象（根据它们特性类型）
+* 在引用入队阶段，如果发现被引用对象已消亡，G1将入队引用对象（Reference）到它们各自的引用队列
+* 如果以上过程处理时间较长，可以考虑增加 VM 参数 `-XX:+ParallelRefProcEnabled` 来处理
+
+### Young-Only 收集时间过长
+
+* 通常，Young 收集所消耗的时间与 Young 生代的空间大小大致上成正比。尤其是，大量的存活对象需要被复制
+* 如果 Evacuate Collection Set 阶段执行时间较长的话，可以考虑减少新生代的 Heap 空间占比，即调低 `-XX:G1NewSizePercent` （实验性参数）
+* 同样地，调低 `-XX:G1MaxNewSizePercent` 也可以减缓 Young 收集所带来地时间消耗
+
+### Mixed 收集时间过长
+
+* Mixed 收集在老生代回收空间，Mixed 收集包含新生代和老年代的 Regions，如果收集时间过长，首先调优 Young-Only 收集，再调优：
+  * `-XX:G1MixedGCCountTarget` 
+  * `-XX:G1MixedGCLiveThresholdPercent` 
+  * `-XX:G1HeapWastePercent` 
+
 
 
 ## 吞吐量 G1 调优

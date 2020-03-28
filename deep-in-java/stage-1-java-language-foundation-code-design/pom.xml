@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>stage-1</artifactId>
+    <artifactId>stage-1-java-language-foundation-code-design</artifactId>
     <name>第一阶段 ：Java 语言基础与代码设计</name>
     <packaging>pom</packaging>
     <modules>
