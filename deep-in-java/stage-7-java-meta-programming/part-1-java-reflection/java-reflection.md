@@ -146,13 +146,51 @@ Reflection is commonly used by programs which require the ability to **examine o
 
 * `java.lang.reflect.Modifier` 
 
+  ![](https://raw.githubusercontent.com/jinminer/docs/master/java-base/deep-in-java/stage-7-java-meta-programming/part-1-java-reflection/1.0-java-reflection-modifiers.png)
+
+  ![](https://raw.githubusercontent.com/jinminer/docs/master/java-base/deep-in-java/stage-7-java-meta-programming/part-1-java-reflection/1.1-java-reflection-modifiers.png)
 
 
 
+### Java 反射 API - 泛型（Generics）
+
+* 泛型信息（Generics Info）：java.lang.Class#getGenericInfo()
+* 泛型参数（Parameters）：java.lang.reflect.ParameterizedType
+* 泛型父类（Super Classes）：java.lang.Class#getGenericSuperclass()
+* 泛型接口（Interfaces）：java.lang.Class#getGenericInterfaces()
+* 泛型申明（Generics Declaration）：java.lang.reflect.GenericDeclaration
+
+### Java 反射 API - 枚举（Enumerations）
+
+* 修饰符/修饰语（Modifiers）
+  * 类对象层面 - java.lang.Class#isEnum()
+  * 字段层面
+    * java.lang.reflect.Field#isEnumConstant()
+* 继承父类 - java.lang.Enum
+
+### Java 反射 API - 注解（Annotations）
+
+* 类型判断 - java.lang.Class#isAnnotation()
+* 继承接口 - java.lang.annotation.Annotation
+* 反射接口 - java.lang.reflect.AnnotatedElement
+* 标注范围 - java.lang.annotation.ElementType
+* 执行实现 - 动态代理
+
+### Java 反射 API - 数组（Arrays）
+
+* 类型判断 - java.lang.Class#isArray()
+* 成员类型 - java.lang.Class#getComponentType()
+* 继承父类 - java.lang.Object
+* 继承接口 - java.lang.Cloneable
+* 执行实现 - JVM 合成
 
 ## Java 8 反射提升
 
-
+* Java 方法参数
+  * 保留接口方法编译参数：-parameters
+  * 反射 API：java.lang.reflect.Parameter
+* 可重复注解
+  * Repeatable
 
 
 
