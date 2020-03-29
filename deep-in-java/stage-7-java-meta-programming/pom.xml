@@ -11,6 +11,8 @@
 
     <artifactId>stage-7-java-meta-programming</artifactId>
     <packaging>pom</packaging>
+    <name>第七阶段 ：Java 元编程</name>
+
     <modules>
         <module>part-1-java-reflection</module>
         <module>part-2-java-beans</module>

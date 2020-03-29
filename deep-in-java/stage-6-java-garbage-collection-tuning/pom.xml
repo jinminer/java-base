@@ -12,5 +12,10 @@
     <artifactId>stage-6-java-garbage-collection-tuning</artifactId>
     <name>第六阶段 ：Java 垃圾回收调优</name>
 
+    <modules>
+        <module>part-1-traditional-garbage-collector-tuning</module>
+        <module>part-2-cenozoic-garbage-collector-tuning</module>
+    </modules>
+
 
 </project>
