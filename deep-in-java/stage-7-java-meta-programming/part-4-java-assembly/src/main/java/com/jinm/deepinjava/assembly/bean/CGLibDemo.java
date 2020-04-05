@@ -8,7 +8,7 @@ import org.springframework.cglib.proxy.MethodProxy;
 import java.beans.*;
 import java.lang.reflect.Method;
 
-import static com.segmentfault.deep.in.java.bytecode.bean.Person.isNumeric;
+import static com.jinm.deepinjava.assembly.bean.Person.isNumeric;
 import static java.lang.String.format;
 import static java.lang.String.valueOf;
 
@@ -40,8 +40,8 @@ public class CGLibDemo {
         });
 
 
-        person.setName("小马哥");
-        person.setName("mercyblitz");
+        person.setName("月白");
+        person.setName("keanemer");
         person.setName("123456789");
 
         System.out.println(person);

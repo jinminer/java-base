@@ -13,4 +13,12 @@
     <artifactId>part-2-java-file-system</artifactId>
     <name>第八阶段 ：：第二部分：Java 文件系统</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+    </dependencies>
+
 </project>

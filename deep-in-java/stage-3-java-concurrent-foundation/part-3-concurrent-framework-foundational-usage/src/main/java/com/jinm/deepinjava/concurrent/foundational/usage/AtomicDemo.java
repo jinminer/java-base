@@ -52,6 +52,7 @@ public class AtomicDemo {
 
         // https://github.com/mercyblitz/confucius-commons/blob/master/confucius-commons-lang/src/main/java/org/confucius/commons/lang/misc/UnsafeUtils.java
         final PrivilegedExceptionAction<Unsafe> action = new PrivilegedExceptionAction<Unsafe>() {
+            @Override
             public Unsafe run() throws Exception {
                 Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
                 theUnsafe.setAccessible(true);

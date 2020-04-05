@@ -24,8 +24,8 @@ public class JavaDynamicProxyDemo {
         // 缺点：只能拦截接口，不能拦截整个类，势必对编程不太友好
         Nameable nameable = newInstance(person);
 
-        nameable.setName("小马哥");
-        nameable.setName("mercyblitz");
+        nameable.setName("月白");
+        nameable.setName("keanemer");
         nameable.setName("123456789");
 
     }
