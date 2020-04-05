@@ -19,6 +19,7 @@
         <module>stage-6-java-garbage-collection-tuning/part-1-traditional-garbage-collector-tuning</module>
         <module>stage-6-java-garbage-collection-tuning/part-2-cenozoic-garbage-collector-tuning</module>
         <module>stage-7-java-meta-programming</module>
+        <module>stage-8-java-input-output</module>
     </modules>
 
     <build>

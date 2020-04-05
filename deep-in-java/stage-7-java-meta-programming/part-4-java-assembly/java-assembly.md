@@ -68,7 +68,7 @@ A `class` file consists of a stream of 8-bit bytes. 16-bit and 32-bit quantities
 
 The `java.lang.instrument` package provides a Java™ programming language API for tools to instrument Java programming language applications -- for example, to monitor them or collect performance information. Tools use `java.lang.instrument` to modify the class file that defines a class -- generally, by inserting into the byte-code of methods additional byte-code which will perform the instrumentation.
 
-`java.lang.instrument` was introduced in JDK™ 5.0.
+`java.lang.instrument` was introduced in JDK™ 5.0. by
 
 
 

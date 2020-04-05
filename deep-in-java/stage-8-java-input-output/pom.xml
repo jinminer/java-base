@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>deep-in-java</artifactId>
+        <groupId>com.jinm</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>stage-8-java-input-output</artifactId>
+    <name>第八阶段 ：Java I/O</name>
+    <modules>
+        <module>part-1-java-input-output-streams</module>
+        <module>part-2-java-file-system</module>
+        <module>part-3-java-nio2</module>
+        <module>part-4-java-nio</module>
+    </modules>
+
+</project>
