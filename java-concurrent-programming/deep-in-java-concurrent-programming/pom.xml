@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jinm</groupId>
+    <artifactId>deep-in-java-concurrent-programming</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>category-1-multithreading-get-started</module>
+        <module>category-2-multithreading-philosophy-1</module>
+        <module>category-3-multithreading-philosophy-2</module>
+        <module>category-3-multithreading-philosophy-2</module>
+        <module>category-4-aqs-philosophy-1</module>
+        <module>category-5-java-concurrent-api</module>
+        <module>category-6-block-queue-atomic</module>
+        <module>category-7-threadpool-forkjoin</module>
+    </modules>
+
+</project>
