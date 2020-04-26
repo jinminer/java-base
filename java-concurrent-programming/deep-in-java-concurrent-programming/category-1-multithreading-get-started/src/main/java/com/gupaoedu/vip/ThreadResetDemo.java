@@ -14,7 +14,7 @@ public class ThreadResetDemo {
 
     public static void main(String[] args) throws InterruptedException {
         Thread thread=new Thread(()->{
-            while(true){//默认是false  _interrupted state?
+            while(!Thread.currentThread().isInterrupted()){//默认是false  _interrupted state?
                 if(Thread.currentThread().isInterrupted()){
                     System.out.println("before:"+Thread.currentThread().isInterrupted());
                     Thread.interrupted(); //复位- 回到初始状态

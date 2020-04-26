@@ -25,7 +25,7 @@ public class AtomicDemo {
         for(int i=0;i<1000;i++){
             new Thread(()->AtomicDemo.incr()).start();
         }
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         System.out.println("运行结果："+count);
 
     }
