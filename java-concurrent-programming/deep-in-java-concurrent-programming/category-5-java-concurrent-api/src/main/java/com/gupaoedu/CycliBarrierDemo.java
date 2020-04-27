@@ -17,11 +17,10 @@ public class CycliBarrierDemo extends Thread{
     //可以使得一组线程达到一个同步点之前阻塞.
 
     public static void main(String[] args) {
-        CyclicBarrier cyclicBarrier=new CyclicBarrier
-                (3,new CycliBarrierDemo());
-        new Thread(new DataImportThread(cyclicBarrier,"file1")).start();
-        new Thread(new DataImportThread(cyclicBarrier,"file2")).start();
-        new Thread(new DataImportThread(cyclicBarrier,"file3")).start();
+        CyclicBarrier cyclicBarrier=new CyclicBarrier(3,new CycliBarrierDemo());
+        new DataImportThread(cyclicBarrier,"file1").start();
+        new DataImportThread(cyclicBarrier,"file2").start();
+//        new DataImportThread(cyclicBarrier,"file3").start();
 
     }
 

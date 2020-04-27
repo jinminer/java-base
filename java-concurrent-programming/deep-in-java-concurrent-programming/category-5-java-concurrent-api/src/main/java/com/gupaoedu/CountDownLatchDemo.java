@@ -12,13 +12,14 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchDemo extends Thread{
 
-    static CountDownLatch countDownLatch=new CountDownLatch(100);
+    static CountDownLatch countDownLatch=new CountDownLatch(3);
 
     public static void main(String[] args) {
         for(int i=0;i<3;i++){
             new CountDownLatchDemo().start();
+            countDownLatch.countDown();
         }
-        countDownLatch.countDown();
+
     }
 
     @Override
