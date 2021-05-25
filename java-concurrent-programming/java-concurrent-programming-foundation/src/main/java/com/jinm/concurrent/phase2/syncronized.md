@@ -234,3 +234,81 @@ e/MethodType;)Ljava/lang/invoke/CallSite;
       #51 ()V
 
 ```
+* `i++` 这行java代码在cpu层面是三条指令
+    ```shell
+    5: iconst_1
+    6: iadd
+    7: putfield      #2                  // Field num:I
+    ```
+* 要保证 `i++`  操作的原子性，则需要在保证3条 cpu 指令的原子性
+* java 关键字 `synchronized` 可以保证`i++` 操作的原子性，使其在多线程环境下串行执行
+
+
+## MarkWork 对象头
+* mark-word：对象标记字段占4个字节，用于存储一些列的标记位，比如：哈希值、轻量级锁的标
+  记位，偏向锁标记位、分代年龄等。
+  
+
+## 使用JOL查看对象的内存布局
+* 无锁
+  * 在未加锁之前，对象头中的第一个字节最后三位为 [001], 其中最后两位 [01]表示无锁，第一位[0]也表示无锁
+ 
+    ```shell
+    com.jinm.concurrent.phase2.classlayout.Demo object internals:
+     OFFSET  SIZE               TYPE DESCRIPTION                               VALUE
+          0     4                    (object header)                           09 00 00 00 (00001001 00000000 00000000 00000000) (9)
+          4     4                    (object header)                           60 26 a3 14 (01100000 00100110 10100011 00010100) (346236512)
+          8     4   java.lang.Object Demo.o                                    (object)
+         12     4                    (loss due to the next object alignment)
+    Instance size: 16 bytes
+    Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+    ```
+
+* 有锁：轻量级锁
+  * 对象头中的的高位第一个字节最后三位数为[101]，表示当前为偏向锁状态。
+  * 这里的第一个对象和第二个对象的锁状态都是101，是因为偏向锁打开状态下，默认会有配置匿名的对象获得偏向锁。
+
+  ```shell
+  com.jinm.concurrent.phase2.classlayout.LightweightLockDemo object internals:
+   OFFSET  SIZE               TYPE DESCRIPTION                               VALUE
+        0     4                    (object header)                           09 00 00 00 (00001001 00000000 00000000 00000000) (9)
+        4     4                    (object header)                           d0 26 23 15 (11010000 00100110 00100011 00010101) (354625232)
+        8     4   java.lang.Object LightweightLockDemo.o                     (object)
+       12     4                    (loss due to the next object alignment)
+  Instance size: 16 bytes
+  Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+  
+  com.jinm.concurrent.phase2.classlayout.LightweightLockDemo object internals:
+   OFFSET  SIZE               TYPE DESCRIPTION                               VALUE
+        0     4                    (object header)                           a4 f4 00 01 (10100100 11110100 00000000 00000001) (16839844)
+        4     4                    (object header)                           d0 26 23 15 (11010000 00100110 00100011 00010101) (354625232)
+        8     4   java.lang.Object LightweightLockDemo.o                     (object)
+       12     4                    (loss due to the next object alignment)
+  Instance size: 16 bytes
+  Space losses: 0 bytes internal + 4 bytes external = 4 bytes total
+  
+  
+  Process finished with exit code 0
+  
+  ```
+* 有锁：重量级锁
+  * 在竞争的情况下锁的标记为 [010] ，其中所标记 [10]表示重量级锁
+  ```shell
+  main locking .....
+  com.jinm.concurrent.phase2.classlayout.HeavyweightLockDemo object internals:
+   OFFSET  SIZE   TYPE DESCRIPTION                               VALUE
+        0     4        (object header)                           ae cf 0c 15 (10101110 11001111 00001100 00010101) (353161134)
+        4     4        (object header)                           80 28 e3 14 (10000000 00101000 11100011 00010100) (350431360)
+  Instance size: 8 bytes
+  Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
+  
+  thread1 locking .....
+  com.jinm.concurrent.phase2.classlayout.HeavyweightLockDemo object internals:
+   OFFSET  SIZE   TYPE DESCRIPTION                               VALUE
+        0     4        (object header)                           ae cf 0c 15 (10101110 11001111 00001100 00010101) (353161134)
+        4     4        (object header)                           80 28 e3 14 (10000000 00101000 11100011 00010100) (350431360)
+  Instance size: 8 bytes
+  Space losses: 0 bytes internal + 0 bytes external = 0 bytes total
+  ```
+
+
