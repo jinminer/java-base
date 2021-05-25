@@ -107,5 +107,9 @@ JNI global references: 319
 
 
 
+## 线程状态流转
+
+![thread-status-flow](https://raw.githubusercontent.com/jinminer/docs/master/java-base/java-concurrent-programming/java-concurrent-programming-foundation/1.0-java-thread-basic/1.0-thread-status-flow.png)
+
 
 
