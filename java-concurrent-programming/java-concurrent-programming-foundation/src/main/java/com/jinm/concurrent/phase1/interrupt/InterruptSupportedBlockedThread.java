@@ -12,6 +12,7 @@ public class InterruptSupportedBlockedThread {
 
                 try {
                     System.out.println(LocalDateTime.now());
+                    System.out.printf("线程开始运行，线程中断标识：Thread.currentThread().isInterrupted() === [%s]%n",Thread.currentThread().isInterrupted());
                     TimeUnit.SECONDS.sleep(2);
                 } catch (InterruptedException e) {
 
@@ -28,6 +29,7 @@ public class InterruptSupportedBlockedThread {
                      *                  3.调用Thread.currentThread().interrupt()方法停止当前线程，并打印异常信息
                      */
                     e.printStackTrace();
+                    System.out.printf("线程抛出InterruptedException异常后中断复位，重置线程中断标识：Thread.currentThread().isInterrupted() === [%s]%n",Thread.currentThread().isInterrupted());
                     Thread.currentThread().interrupt();
                 }
 
