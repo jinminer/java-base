@@ -51,6 +51,13 @@ public class Producer implements Runnable{
 
             condition.signal();
 
+            /**
+             * 手动释放锁：
+             *      1.如果不进行手动释放锁，只能等生产者循环执行业务逻辑，在满足boxes.size() == capacity条件时才释放锁，即 接连生产10个，
+             *              才调用lock.unlock();逻辑释放锁，在此动作之前，因为生产者并未释放锁，所以被唤醒的消费者会由等待队列进入阻塞队列等待生产者释放锁
+             */
+            lock.unlock();
+
         }
 
     }
